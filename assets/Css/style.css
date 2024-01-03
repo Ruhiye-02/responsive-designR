@@ -1,0 +1,161 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+
+body {
+    height: 100vh;
+    background-color: black;
+    background-image: url("../images/1328245.jpeg");
+    background-position: center;
+    background-size: cover;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+a:hover {
+    color: orange;
+}
+
+/* Header */
+
+header {
+    position: relative;
+    padding: 0.2rem;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.navbar .logo a {
+    font-size: 1.5rem;
+
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle_btn {
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+    /* 992px-de ise block verib acaciyiq */
+}
+
+
+.action_btn {
+    background-color: orange;
+    color: white;
+    border-color: orange;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.action_btn:hover {
+    color: white;
+    scale: 1.05;
+}
+
+.action_btn:active {
+    scale: 0.95;
+}
+
+/* Dropdownmenu */
+.dropdownmenu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    height: 0px;
+    background-color: rgb(225, 225, 225, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdownmenu.open {
+    height: 240px;
+}
+
+/* open eslinde yoxdu toggle olanda gorunur  */
+.dropdownmenu li {
+    padding: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.dropdownmenu .action_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Hero */
+.welcome {
+    height: calc(100vh-60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding-top: 15rem;
+
+}
+
+.welcome h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Responsive desing */
+@media(max-width: 992px) {
+
+    .navbar .links,
+    .navbar .action_btn {
+        display: none;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+
+    .dropdownmenu {
+        display: block;
+    }
+}
+
+@media(max-width:576px) {
+    .dropdownmenu {
+        left: 2rem;
+        width: unset;
+    }
+}
